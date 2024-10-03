@@ -12,7 +12,7 @@ import { useContextSelector } from "use-context-selector";
 
 export function Transactions() {
   const transactions = useContextSelector(TransactionsContext, (context) => {
-    return context.transactions
+    return context.transactions;
   });
 
   return (

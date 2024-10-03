@@ -1,6 +1,6 @@
 import { ReactNode, useCallback, useEffect, useState } from "react";
 import { api } from "../lib/axios";
-import { createContext } from "use-context-selector"
+import { createContext } from "use-context-selector";
 
 interface Transaction {
   id: number;
@@ -42,7 +42,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
       },
     });
     setTransactions(response.data);
-  }, [])
+  }, []);
 
   const createTransaction = useCallback(async (data: CreateTransactionDTO) => {
     const { description, price, category, type } = data;
@@ -55,7 +55,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     });
 
     setTransactions((state) => [response.data, ...state]);
-  }, [])
+  }, []);
 
   useEffect(() => {
     fetchTransactions();

@@ -73,9 +73,7 @@ export const CloseButton = styled(Dialog.Close)`
   cursor: pointer;
   color: ${(props) => props.theme["gray-500"]};
 
-  transition:
-    transform 0.2s,
-    color 0.2s;
+  transition: transform 0.2s, color 0.2s;
 
   &:hover {
     transform: scale(1.2);

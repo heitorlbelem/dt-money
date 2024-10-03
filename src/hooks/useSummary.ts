@@ -4,11 +4,11 @@ import { useContextSelector } from "use-context-selector";
 
 export const useSummary = () => {
   const transactions = useContextSelector(TransactionsContext, (context) => {
-    return context.transactions
+    return context.transactions;
   });
 
   const summary = useMemo(() => {
-    transactions.reduce(
+    return transactions.reduce(
       (acc, transaction) => {
         if (transaction.type === "income") {
           acc.income += Number(transaction.price);
@@ -25,8 +25,7 @@ export const useSummary = () => {
         total: 0,
       }
     );
-  
-  }, [transactions])
+  }, [transactions]);
 
   return { summary };
 };
