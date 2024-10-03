@@ -9,33 +9,33 @@ interface Transaction {
   createdAt: string;
 }
 
-type TransactionContextType = {
-  transactions: Transaction[]
+interface TransactionContextType {
+  transactions: Transaction[];
 }
 
 interface TransactionsProviderProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
-export const TransactionsContext = createContext({} as TransactionContextType)
+export const TransactionsContext = createContext({} as TransactionContextType);
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
-  const [transactions, setTransactions] = useState<Transaction[]>([])
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   const loadTransactions = async () => {
-    const response = await fetch(`http://localhost:3333/transactions`)
-    const data = await response.json()
+    const response = await fetch(`http://localhost:3333/transactions`);
+    const data = await response.json();
 
-    setTransactions(data)
-  }
+    setTransactions(data);
+  };
 
   useEffect(() => {
-    loadTransactions()
-  }, [])
+    loadTransactions();
+  }, []);
 
-  return(
+  return (
     <TransactionsContext.Provider value={{ transactions }}>
       {children}
     </TransactionsContext.Provider>
-  )
+  );
 }

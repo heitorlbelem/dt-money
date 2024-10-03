@@ -4,7 +4,7 @@ import { priceFormatter } from "../../utils/formatter";
 import { useSummary } from "../../hooks/useSummary";
 
 export function Summary() {
-  const { summary } = useSummary()
+  const { summary } = useSummary();
 
   return (
     <SummaryContainer>
@@ -30,5 +30,5 @@ export function Summary() {
         <strong>{priceFormatter.format(summary.total)}</strong>
       </SummaryCard>
     </SummaryContainer>
-  )
+  );
 }
