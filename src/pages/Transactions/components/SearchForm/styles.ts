@@ -39,7 +39,10 @@ export const SearchFormContainer = styled.form`
       background: ${(props) => props.theme["green-500"]};
       border: 1px solid ${(props) => props.theme["green-500"]};
       color: ${(props) => props.theme.white};
-      transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+      transition:
+        background-color 0.2s,
+        color 0.2s,
+        border-color 0.2s;
       cursor: pointer;
     }
   }
