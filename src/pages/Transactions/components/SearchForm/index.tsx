@@ -13,7 +13,7 @@ const searchFormSchema = zod.object({
 
 type SearchFormInputs = zod.infer<typeof searchFormSchema>;
 
-function SearchFormComponent() {
+export function SearchForm() {
   const fetchTransactions = useContextSelector(TransactionsContext, (context) => {
     return context.fetchTransactions
   });
@@ -45,4 +45,3 @@ function SearchFormComponent() {
   );
 }
 
-export const SearchForm = memo(SearchFormComponent)
